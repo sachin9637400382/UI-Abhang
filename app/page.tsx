@@ -1,95 +1,72 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Metadata } from "next";
+import HomeComponent from "@abhang/components/home/home-component";
+import API_ENDPOINTS from "./utils/api-endpoints";
+
+export async function generateMetadata(): Promise<Metadata> {
+  //const response = await fetch(`https://dummyjson.com/posts/${postId}`);
+  //const post: BlogPost = await response.json();
+  return {
+    title: "अभंगवाणी-Abhangvani",
+    description: "वाचा सर्व ग्रंथ, आरती , कादंबरी , अभंग , संत आणि  संप्रदाय संतांची माहिती आणि त्यांचे साहित्य - abhangvani.com ते हि फ्री... -Read All Granth,Aratis,Kadambaris,Abhangs ,Sant and Sampradaye Information free...",
+    keywords: ["ग्रंथ", "संत",
+      "आरती",
+      "कादंबरी",
+      "अभंग",
+      "संत आणि  संप्रदाय संतांची माहिती",
+      "पवित्र व्यक्ती",
+      "धार्मिक व्यक्ती",
+      "धर्म",
+      "आध्यात्मिकता",
+      "सेवा",
+      "संप्रदाय",
+      "धार्मिक गट",
+      "आध्यात्मिक गट",
+      "गुरु",
+      "शिकवणी",
+      "भारतीय धार्मिक परंपरा",
+      "भारतीय सांस्कृतिक परंपरा",
+      "संत आणि संप्रदाय",
+      "भारतीय संत",
+      "भारतीय संप्रदाय"],
+    openGraph: {
+      url: `${API_ENDPOINTS.DOMAIN_BASE_URL}`,
+      title: "अभंगवाणी-Abhangvani",
+      description: "वाचा सर्व ग्रंथ,आरती,कादंबरी,अभंग,संत आणि संप्रदाय संतांची माहिती आणि त्यांचे साहित्य - abhangvani.com ते हि फ्री...-Read All Granth,Aratis,Kadambaris,Abhangs ,Sant and Sampradaye Information free...",
+      type: 'website',
+      images: [
+        {
+          url: `${API_ENDPOINTS.DOMAIN_BASE_URL}assets/images/abhangvani-og/abhangvani-fb-og.png`,
+          secureUrl: `${API_ENDPOINTS.DOMAIN_BASE_URL}assets/images/abhangvani-og/abhangvani-fb-og.png`,
+          alt: "अभंगवाणी-Abhangvani",
+          width: 1200,
+          height: 630,
+          type: "image/png"
+        },
+        {
+          url: `${API_ENDPOINTS.DOMAIN_BASE_URL}assets/images/abhangvani-og/abhangvani-insta-og.png`,
+          secureUrl: `${API_ENDPOINTS.DOMAIN_BASE_URL}assets/images/abhangvani-og/abhangvani-insta-og.png`,
+          alt: "अभंगवाणी-Abhangvani",
+          width: 1080,
+          height: 1080,
+          type: "image/png"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "अभंगवाणी",
+      description: "वाचा सर्व ग्रंथ,आरती,कादंबरी,अभंग,संत आणि संप्रदाय संतांची माहिती आणि त्यांचे साहित्य - abhangvani.com ते हि फ्री...-Read All Granth,Aratis,Kadambaris,Abhangs ,Sant and Sampradaye Information free...",
+      images: `${API_ENDPOINTS.DOMAIN_BASE_URL}assets/images/abhangvani-og/abhangvani-twitter-og.png`,
+    },
+    robots: {
+      index: false,
+      follow: true,
+    },
+  };
+}
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <HomeComponent />
   );
 }
