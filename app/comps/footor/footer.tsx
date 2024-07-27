@@ -128,7 +128,7 @@ export default function Footer() {
           <Typography variant="body2" fontWeight={600}>
           🧑🏻‍💻कंपनी
  </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="/about">
           ℹ️ आमच्याबद्दल
           </Link>
         </Box>
@@ -142,10 +142,10 @@ export default function Footer() {
           <Typography variant="body2" fontWeight={600}>
           📝लीगल 
           </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary"href="mailto:support@abhangvani.com">
           📞संपर्क करा
           </Link>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="/privacy-policy">
           👁️‍🗨️Privacy
           </Link>
          
@@ -162,13 +162,13 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="/privacy-policy">
             Privacy Policy
           </Link>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="/privacy-policy">
             Terms of Service
           </Link>
           <Copyright />

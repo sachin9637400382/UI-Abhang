@@ -170,8 +170,8 @@ const Highlights = () => {
                                                 <Typography fontWeight="medium" gutterBottom color="inherit">
                                                     {item.name}
                                                 </Typography>
-                                                <Typography variant="body2" sx={{ color: 'grey.400' }}>
-                                                    {item.shortDescription}
+                                                <Typography variant="body2" sx={{ color: 'grey.400' }}  dangerouslySetInnerHTML={{ __html: item?.shortDescription ?? "" }}>
+                                                    {/* {item.shortDescription}  */}
                                                 </Typography>
                                             </div>
                                             </Link>
