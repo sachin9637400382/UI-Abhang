@@ -81,7 +81,7 @@ const GrnthItem = ({ granthWithType, sx }: GranthItemProps) => {
             />
             <CardContent>
                 <Grid container spacing={1}>
-                    {(granthWithType?.contents).map((content, granthIndex) => (
+                    {(granthWithType?.contents)?.map((content, granthIndex) => (
                         <Grid key={`${content.name}-${granthIndex}-grid`} item xs={12} sm={6} md={4} lg={3}>
                             {GrnthRow(content, granthIndex)}
                         </Grid>

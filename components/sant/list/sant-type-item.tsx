@@ -71,7 +71,7 @@ const SantTypeWithSantsItem = ({ santType }: SantTypeProps): React.JSX.Element =
       />
       <CardContent>
         <Grid container spacing={1}>
-          {(santType.sants).map((sant, santIndex) => (
+          {(santType.sants)?.map((sant, santIndex) => (
             <Grid key={`${sant.name}-sant-grid`} item xs={12} sm={6} md={4} lg={3}>
               {SantRow(sant)}
             </Grid>

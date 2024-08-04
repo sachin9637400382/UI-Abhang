@@ -280,7 +280,7 @@ const OurFeatureComponent = () => {
               </Typography>
             </div>
             <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
-              {items.map(({ title }, index) => (
+              {items?.map(({ title }, index) => (
                 <Chip
                   key={index}
                   label={title}
@@ -352,7 +352,7 @@ const OurFeatureComponent = () => {
               useFlexGap
               sx={{ width: '100%', display: { xs: 'none', sm: 'flex' } }}
             >
-              {items.map(({ icon, title, description }, index) => (
+              {items?.map(({ icon, title, description }, index) => (
                 <Card
                   key={index}
                   variant="outlined"

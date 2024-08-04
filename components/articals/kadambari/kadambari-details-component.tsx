@@ -218,7 +218,7 @@ const KadambariDetailsComponent = ({ kadambariTypeId, kadambariId }: any) => {
                                                                             }}
                                                                             alt={page?.kadambariDetails?.name || ""}
                                                                             title={page?.kadambariDetails?.name}
-                                                                            src={HELPERS.getDocUrl(page.kadambariDetails?.document.url)}
+                                                                            src={HELPERS.getDocUrl(page.kadambariDetails?.contents[page.currentAratiIndex].document?.url ??page.kadambariDetails?.document.url)}
                                                                             height={220}
                                                                             width={220}
                                                                         />
@@ -269,7 +269,7 @@ const KadambariDetailsComponent = ({ kadambariTypeId, kadambariId }: any) => {
                                                                     <Grid key={`new-item`} item xs={12} marginTop={2}>
 
                                                                         <Grid container columnSpacing={1} rowSpacing={1} justifyContent="center" marginTop={3} padding={'10px'}>
-                                                                            {(page?.kadambariDetails.contents).map((content, contentIndex) => (
+                                                                            {(page?.kadambariDetails.contents)?.map((content, contentIndex) => (
                                                                                 <Grid item key={`${content.id}-abhang-grid`} xs={12} sm={5} md={5} lg={5}>
                                                                                     <Link style={{ textDecoration: 'none' }} href={content.click}>
                                                                                         <Card sx={{
@@ -337,7 +337,7 @@ const KadambariDetailsComponent = ({ kadambariTypeId, kadambariId }: any) => {
                             {
                                 loading.kadambariList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.kadambariList} listTitle={"✨नवीन कादंबरी  संग्रह"} displayField={{
+                                    <LeftCardList  moreHref="/articals/kadambari" sx={{ height: '100%', mb: 2 }} items={page.kadambariList} listTitle={"✨नवीन कादंबरी  संग्रह"} displayField={{
                                         name: "name",
                                         description: "",
                                         imageUrl: "documentUrl"
@@ -348,7 +348,7 @@ const KadambariDetailsComponent = ({ kadambariTypeId, kadambariId }: any) => {
                             {
                                 loading.abhangsList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"✔️ नक्की वाचा"} displayField={{
+                                    <LeftCardList moreHref="/abhangs" sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"✔️ नक्की वाचा"} displayField={{
                                         name: "name",
                                         description: "santName",
                                         imageUrl: "abhangThumbnailUrl"

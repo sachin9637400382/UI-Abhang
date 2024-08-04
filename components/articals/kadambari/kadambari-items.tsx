@@ -80,7 +80,7 @@ const KadambaiItem = ({ kadambarihWithType, sx }: GranthItemProps) => {
             />
             <CardContent>
                 <Grid container spacing={1}>
-                    {(kadambarihWithType?.contents).map((content, granthIndex) => (
+                    {(kadambarihWithType?.contents)?.map((content, granthIndex) => (
                         <Grid key={`${content.name}-${granthIndex}-grid`} item xs={12} sm={6} md={4} lg={3}>
                             {KadambariRow(content, granthIndex)}
                         </Grid>

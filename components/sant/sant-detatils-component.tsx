@@ -302,7 +302,7 @@ const SantDetailsComponent = ({ santName }: any) => {
                         <Grid item>
                             {
                                 loading.aratis === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratis} listTitle={"✨आरती संग्रह"} displayField={{
+                                    <LeftCardList moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratis} listTitle={"✨आरती संग्रह"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"
@@ -312,7 +312,7 @@ const SantDetailsComponent = ({ santName }: any) => {
                         <Grid item>
                             {
                                 loading.abhangs === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.abhangs} listTitle={"💡नक्की वाचा"} displayField={{
+                                    <LeftCardList moreHref="/abhangs" sx={{ height: '100%', mb: 2 }} items={page.abhangs} listTitle={"💡नक्की वाचा"} displayField={{
                                         name: "name",
                                         description: "santName",
                                         imageUrl: "abhangThumbnailUrl"

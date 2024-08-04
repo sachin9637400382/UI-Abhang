@@ -80,7 +80,7 @@ const AratiItem = ({ aratiWithType, sx }: SantAbhangsItemProps) => {
             />
             <CardContent>
                 <Grid container spacing={1}>
-                    {(aratiWithType?.contents).map((content, aratiIndex) => (
+                    {(aratiWithType?.contents)?.map((content, aratiIndex) => (
                         <Grid key={`${content.name}-${aratiIndex}-grid`} item xs={12} sm={6} md={4} lg={3}>
                             {AratiRow(content, aratiWithType.urlId, aratiIndex)}
                         </Grid>

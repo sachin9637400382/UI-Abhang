@@ -99,7 +99,7 @@ const SantAbhangListComponent = () => {
     }, []);
 
     const getAbhangs = async (pageNumber: number, pageSize: number, searchQuery: string): Promise<{ "list": ISantList, count: number }> => {
-        const { Data: AbhangsList, TotalRecordCount } = await apiCall<ISantList>(`${API_ENDPOINTS.GET_SANTS}`, 'POST', {
+        const { Data: AbhangsList, TotalRecordCount } = await apiCall<ISantList>(`${API_ENDPOINTS.GET_ABHANG_WITH_SANT}`, 'POST', {
             "pageNumber": pageNumber,
             "pageSize": pageSize,
             "parms": searchQuery === "" ? [] : [{
@@ -211,7 +211,7 @@ const SantAbhangListComponent = () => {
                         <Grid item>
                             {
                                 loading.arati === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratis} listTitle={"✨ आरती संग्रह"} displayField={{
+                                    <LeftCardList moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratis} listTitle={"✨ आरती संग्रह"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"
@@ -222,7 +222,7 @@ const SantAbhangListComponent = () => {
                             {
                                 loading.granths === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.granths} listTitle={"📜 ग्रंथ"} displayField={{
+                                    <LeftCardList moreHref="/articals/grnth" sx={{ height: '100%', mb: 2 }} items={page.granths} listTitle={"📜 ग्रंथ"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"

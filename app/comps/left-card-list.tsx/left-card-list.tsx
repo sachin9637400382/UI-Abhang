@@ -11,11 +11,12 @@ export interface LeftCardListProps {
     items: any[];
     listTitle: string
     displayField: { name: string, description: string, imageUrl: string }
+    moreHref:string,
     onItemClick?: (item: any) => string
 }
 
 
-const LeftCardList = ({ items = [], sx, listTitle = "नवीन", displayField, onItemClick }: LeftCardListProps): React.JSX.Element => {
+const LeftCardList = ({ items = [], sx, listTitle = "नवीन", displayField, onItemClick ,moreHref}: LeftCardListProps): React.JSX.Element => {
     return (
         <Card sx={sx}>
             <CardHeader title={listTitle} />
@@ -53,9 +54,9 @@ const LeftCardList = ({ items = [], sx, listTitle = "नवीन", displayField
                             </ListItemAvatar>
                             <ListItemText
                                 primary={item[displayField.name]}
-                                primaryTypographyProps={{ variant: 'subtitle1' }}
-                                secondary={`${item[displayField.description] ?? ""}`}
-                                secondaryTypographyProps={{ variant: 'body2' }}
+                                //primaryTypographyProps={{ variant: 'subtitle1' }}
+                                //secondary={`${item[displayField.description] ?? ""}`}
+                                //secondaryTypographyProps={{ variant: 'body2' }}
                                 style={{
                                     overflow: 'hidden',
                                     display: '-webkit-box',
@@ -79,6 +80,7 @@ const LeftCardList = ({ items = [], sx, listTitle = "नवीन", displayField
                     endIcon={<ArrowRight />}
                     size="small"
                     variant="text"
+                    href={moreHref}
                 >
                     अजून पहा
                 </Button>

@@ -175,7 +175,7 @@ const SantListComponent = () => {
 
     return (
         <>
-            <Hero loading={loading.santWithType} searchQuery={page.searchQuery} updateSearchQuery={updateSearchQuery} isSearchEnable={true} title={"पंथ"} subTitle={"आणि संप्रदाय"} />
+            <Hero loading={loading.santWithType} searchQuery={page?.searchQuery} updateSearchQuery={updateSearchQuery} isSearchEnable={true} title={"पंथ"} subTitle={"आणि संप्रदाय"} />
             <Container id="features" sx={{ py: { xs: 1, sm: 5 } }}>
                 <Grid container columnSpacing={2} alignItems={'top'}>
                     <Grid item lg={8} xs={12} key={`sant-type-gird`}
@@ -199,7 +199,7 @@ const SantListComponent = () => {
                     >
 
                         {
-                            loading.santWithType === true ? <Skeleton variant="rectangular" width={'100%'} height={500} />
+                            loading?.santWithType === true ? <Skeleton variant="rectangular" width={'100%'} height={500} />
                                 :
                                 <>
                                     {
@@ -210,12 +210,12 @@ const SantListComponent = () => {
                                                 <div>रेकॉर्ड सापडले नाही</div>
                                             </div>
                                             :
-                                            <>{(page.santTypesWithSants).map((santType, santIndex) => (
+                                            <>{Array.isArray(page?.santTypesWithSants) && (page?.santTypesWithSants as ISantTypesList)?.map((santType, santIndex) => (
                                                 <Grid item key={`${santIndex}-sant-type`} marginBottom={5}>
                                                     <SantTypeWithSantsItem santType={santType} />
                                                 </Grid>
                                             ))}
-                                                {page.totalRecords > page?.santTypesWithSants.length &&
+                                                {page?.totalRecords > page?.santTypesWithSants.length &&
                                                     <Grid id="sant-type-gird" item key={`more-sant-type`} marginTop={1} marginBottom={2} textAlign={'center'}>
                                                         <MyButton onClick={onNextPageClick} btnText={"  लोड करा..."} />
                                                     </Grid>}
@@ -232,7 +232,7 @@ const SantListComponent = () => {
                             {
                                 loading.arati === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratis} listTitle={"✨ आरती संग्रह"} displayField={{
+                                    <LeftCardList moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page?.aratis} listTitle={"✨ आरती संग्रह"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"
@@ -243,7 +243,7 @@ const SantListComponent = () => {
                             {
                                 loading.granths === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.granths} listTitle={"📜 ग्रंथ"} displayField={{
+                                    <LeftCardList moreHref="/abhangs" sx={{ height: '100%', mb: 2 }} items={page?.granths} listTitle={"📜 ग्रंथ"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"

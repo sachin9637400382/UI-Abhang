@@ -40,6 +40,8 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+        <meta name="google-adsense-account" content="ca-pub-4428025077181648"></meta>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428025077181648" crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
         <AppProvider>

@@ -30,7 +30,7 @@ const ToggleCustomTheme =({
             "pageSize": 0,
             "parms": []
         });
-
+        console.log("Settings",Settings)
         return Settings;
     }
 
@@ -73,7 +73,7 @@ const ToggleCustomTheme =({
                     },
                 }}
             >
-                <ToggleButton  value={'PlayStore'} href={globalSettings?.WhatsappGroupUrl || ""} target="_blank">
+                <ToggleButton  value={'PlayStore'} href={globalSettings?.AndroidAppUrl || ""} target="_blank">
                     <AutoAwesomeRoundedIcon sx={{ fontSize: '20px', mr: 1 }} />
                     <ShopIcon />
                 </ToggleButton>

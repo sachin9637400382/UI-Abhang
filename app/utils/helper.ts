@@ -15,7 +15,7 @@ const imageLoader = ({ width, quality }: any) => {
 
 const convertToMarathiNumber = (num: number) => {
     const marathiDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
-    return num.toString().split('').map(digit => marathiDigits[parseInt(digit)]).join('');
+    return num.toString().split('')?.map(digit => marathiDigits[parseInt(digit)]).join('');
 };
 
 const getShareUrl = (url: string) => {

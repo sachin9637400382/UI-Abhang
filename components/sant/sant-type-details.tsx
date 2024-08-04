@@ -184,13 +184,23 @@ const SantTypeDetailsComponent = ({ santTypeId }: any) => {
                                                                     textAlign: 'center',
                                                                     backgroundColor: theme.palette.mode === 'light' ? 'antiquewhite' : 'primary.light'
                                                                 })}
-                                                            />
+                                                            /> 
                                                             <CardContent style={{ padding: 0 }}>
                                                                 <Grid container spacing={1} textAlign={'center'}>
                                                                     <Grid key={`new-item`} item xs={12}
                                                                     sx={(theme) => ({
                                                                         backgroundColor: theme.palette.mode === 'light' ? 'antiquewhite' : 'primary.light'
                                                                     })}>
+                                                                        <ImageWithLoader
+                                                                        style={{
+                                                                            borderRadius: '50%'
+                                                                        }}
+                                                                        alt={page?.santWithType.name || ""}
+                                                                        title={page?.santWithType.name}
+                                                                        src={HELPERS.getDocUrl(page.santWithType?.document?.url)}
+                                                                        height={220}
+                                                                        width={220}
+                                                                    />
                                                                         <Typography
                                                                             variant="h1"
                                                                             sx={{
@@ -284,7 +294,7 @@ const SantTypeDetailsComponent = ({ santTypeId }: any) => {
                             {
                                 loading.aratisList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratisList} listTitle={"आरती संग्रह"} displayField={{
+                                    <LeftCardList moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratisList} listTitle={"आरती संग्रह"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"
@@ -295,7 +305,7 @@ const SantTypeDetailsComponent = ({ santTypeId }: any) => {
                             {
                                 loading.abhangsList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"नक्की वाचा"} displayField={{
+                                    <LeftCardList moreHref="/abhangs" sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"नक्की वाचा"} displayField={{
                                         name: "name",
                                         description: "santName",
                                         imageUrl: "abhangThumbnailUrl"

@@ -91,7 +91,7 @@ const QuickAratis = () => {
                 मराठी आरती संग्रह. 
             </Typography>
             <Box sx={{ width: '100%' }}>
-            {page.aratis.map((arati, aratiIndex) => (
+            {page?.aratis?.map((arati, aratiIndex) => (
                 <Accordion
                     key={`ararti-${aratiIndex}`}
                     expanded={expanded === 'panel1'}

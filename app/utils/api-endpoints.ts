@@ -21,6 +21,7 @@ const API_ENDPOINTS = {
     GET_SANT_TYPES_BY_ID : 'Abhangs/SantTypes/get/',
 
     GET_SANTS:"Abhangs/Sants/get",
+    GET_ABHANG_WITH_SANT:"Abhangs/Abhangs/getAbhangWithSant",
     GET_SANT_DETAILS_BY_NAME:'Abhangs/Sants/get/',
 
     GET_ABHANG_BY_ID:"Abhangs/Abhangs/get/",

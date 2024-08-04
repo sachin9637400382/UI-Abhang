@@ -188,7 +188,7 @@ const KadambariListComponent = () => {
                                                 <div>रेकॉर्ड सापडले नाही</div>
                                             </div>
                                             :
-                                            <>{(page?.kadambariList).map((kadambai, kadambariIndex) => (
+                                            <>{(page?.kadambariList)?.map((kadambai, kadambariIndex) => (
                                                 <Grid id="sant-type-gird" item key={`${kadambariIndex}-sant-type`} marginBottom={5}>
                                                     <KadambaiItem kadambarihWithType={kadambai} />
                                                 </Grid>
@@ -208,8 +208,8 @@ const KadambariListComponent = () => {
                         <Grid item>
                             {
                                 loading.santTypesWithSants === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.santTypesWithSants} listTitle={"✨ पंथ आणि संप्रदाय"} displayField={{
-                                        name: "santTypeName",
+                                    <LeftCardList moreHref="/sant" sx={{ height: '100%', mb: 2 }} items={page.santTypesWithSants} listTitle={"✨ पंथ आणि संप्रदाय"} displayField={{
+                                        name: "name",
                                         description: "discription",
                                         imageUrl: ""
                                     }} />
@@ -219,7 +219,7 @@ const KadambariListComponent = () => {
                             {
                                 loading.aratiList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratiList} listTitle={"📜 आरती"} displayField={{
+                                    <LeftCardList  moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratiList} listTitle={"📜 आरती"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"

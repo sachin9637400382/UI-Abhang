@@ -178,8 +178,8 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                                         </div>
                                         :
                                         <>
-                                            <Grid item key={`abhang-card-child-grid`} style={{height: '100%'}}>
-                                                <Card key={`sant-type-card`} style={{height: '100%'}}>
+                                            <Grid item key={`abhang-card-child-grid`} >
+                                                <Card key={`sant-type-card`} >
                                                     {page?.aratiDetails !== undefined &&
                                                         <>
                                                             <CardHeader
@@ -203,7 +203,7 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                                                                         }}
                                                                         alt={page?.aratiDetails.name || ""}
                                                                         title={page?.aratiDetails.name}
-                                                                        src={HELPERS.getDocUrl(page.aratiDetails?.document?.url)}
+                                                                        src={HELPERS.getDocUrl(page.aratiDetails?.contents[page.currentAratiIndex]?.document?.url ?? page.aratiDetails?.document?.url)}
                                                                         height={220}
                                                                         width={220}
                                                                     />
@@ -249,7 +249,7 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                                                                     <Grid key={`new-item`} item xs={12} marginTop={2}>
 
                                                                         <Grid container columnSpacing={1} rowSpacing={1} justifyContent="center" marginTop={3} padding={'10px'}>
-                                                                            {(page?.aratiDetails.contents).map((content, contentIndex) => (
+                                                                            {(page?.aratiDetails.contents)?.map((content, contentIndex) => (
                                                                                 <Grid item key={`${content.id}-abhang-grid`} xs={12} sm={5} md={5} lg={5}>
                                                                                     <Link style={{ textDecoration: 'none' }} href={content.click}>
                                                                                         <Card sx={{
@@ -317,7 +317,7 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                             {
                                 loading.aratisList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratisList} listTitle={"✨आरती संग्रह"} displayField={{
+                                    <LeftCardList moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratisList} listTitle={"✨आरती संग्रह"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"
@@ -328,7 +328,7 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                             {
                                 loading.abhangsList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"✔️ नक्की वाचा"} displayField={{
+                                    <LeftCardList moreHref="/abhangs" sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"✔️ नक्की वाचा"} displayField={{
                                         name: "name",
                                         description: "santName",
                                         imageUrl: "abhangThumbnailUrl"

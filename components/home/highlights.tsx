@@ -140,7 +140,7 @@ const Highlights = () => {
                                 </Typography>
                             </Box>
                             <Grid container spacing={2.5}>
-                                {page.granths.map((item, index) => (
+                                {page?.granths?.map((item, index) => (
                                     <Grid item xs={12} sm={6} md={4} key={index}>
                                         <Stack
                                             direction="column"

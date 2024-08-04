@@ -15,7 +15,7 @@ const getSantWithType = async (searchQuery: string = ""): Promise<ISantTypes> =>
 var meta = HELPERS.defaultMeta;
 export async function generateMetadata({ params }: { params: { santTypeId: string } }): Promise<Metadata> {
   const Data = await getSantWithType(params?.santTypeId).then((santType) => {
-
+    console.log("santType",santType)
     if (santType !== null || santType !== undefined) {
       const santNames = santType?.sants?.map(sant => sant.name).join(',');
       meta.title = `${santType?.name} - माहिती`,
@@ -28,17 +28,17 @@ export async function generateMetadata({ params }: { params: { santTypeId: strin
             url: HELPERS.getDocUrl(santType?.document?.url),
             secureUrl: HELPERS.getDocUrl(santType?.document?.url),
             alt: `${santType?.name} - माहिती`,
-            width: 1200,
-            height: 630,
-            type: "image/png"
+            width: 300,
+            height: 300,
+            type: "image/jpg"
         },
         {
             url:  HELPERS.getDocUrl(santType?.document?.url),
             secureUrl:  HELPERS.getDocUrl(santType?.document?.url),
             alt: `${santType?.name} - माहिती`,
-            width: 1080,
-            height: 1080,
-            type: "image/png"
+            width: 300,
+            height: 300,
+            type: "image/jpg"
         }
       ] : meta.openGraph.images,
       meta.twitter = (santType?.document?.url !== null || santType?.document?.url !== undefined) ? {

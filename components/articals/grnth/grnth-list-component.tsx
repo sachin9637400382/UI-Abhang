@@ -195,7 +195,7 @@ const GrnthListComponent = () => {
                                                 <div>रेकॉर्ड सापडले नाही</div>
                                             </div>
                                             :
-                                            <>{(page?.grnthList).map((granth, santIndex) => (
+                                            <>{(page?.grnthList)?.map((granth, santIndex) => (
                                                 <Grid id="sant-type-gird" item key={`${santIndex}-sant-type`} marginBottom={5}>
                                                     <GrnthItem granthWithType={granth} />
                                                 </Grid>
@@ -215,7 +215,7 @@ const GrnthListComponent = () => {
                         <Grid item>
                             {
                                 loading.santTypesWithSants === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.santTypesWithSants} listTitle={"✨ पंथ आणि संप्रदाय"} displayField={{
+                                    <LeftCardList moreHref="/sant" sx={{ height: '100%', mb: 2 }} items={page.santTypesWithSants} listTitle={"✨ पंथ आणि संप्रदाय"} displayField={{
                                         name: "santTypeName",
                                         description: "discription",
                                         imageUrl: ""
@@ -226,7 +226,7 @@ const GrnthListComponent = () => {
                             {
                                 loading.aratiList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratiList} listTitle={"📜 आरती"} displayField={{
+                                    <LeftCardList  moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratiList} listTitle={"📜 आरती"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"

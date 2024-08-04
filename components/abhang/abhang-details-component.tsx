@@ -226,7 +226,7 @@ const AbhangDetatilsComponent = ({ santName, abhangId }: any) => {
                                                                     <Grid key={`new-item`} item xs={12} marginTop={2}>
                                                                         
                                                                         <Grid container columnSpacing={1} rowSpacing={1} justifyContent="center" marginTop={3} padding={'10px'}>
-                                                                            {(page?.santDetails.abhangs).map((abhang, santIndex) => (
+                                                                            {(page?.santDetails.abhangs)?.map((abhang, santIndex) => (
                                                                                 <Grid item key={`${abhang.id}-abhang-grid`} xs={12} sm={5} md={5} lg={5}>
                                                                                     <Link style={{ textDecoration: 'none' }} href={`/abhangs/${page?.santDetails?.urlId}/${abhang.urlId}`}>
                                                                                         <Card sx={{
@@ -294,7 +294,7 @@ const AbhangDetatilsComponent = ({ santName, abhangId }: any) => {
                             {
                                 loading.aratisList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.aratisList} listTitle={"✨आरती संग्रह"} displayField={{
+                                    <LeftCardList moreHref="/articals/aratis" sx={{ height: '100%', mb: 2 }} items={page.aratisList} listTitle={"✨आरती संग्रह"} displayField={{
                                         name: "name",
                                         description: "shortDescription",
                                         imageUrl: "documentUrl"
@@ -305,7 +305,7 @@ const AbhangDetatilsComponent = ({ santName, abhangId }: any) => {
                             {
                                 loading.abhangsList === true ? <Skeleton variant="rectangular" width="100%" height={200} /> :
 
-                                    <LeftCardList sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"✔️ नक्की वाचा"} displayField={{
+                                    <LeftCardList moreHref="/abhangs" sx={{ height: '100%', mb: 2 }} items={page.abhangsList} listTitle={"✔️ नक्की वाचा"} displayField={{
                                         name: "name",
                                         description: "santName",
                                         imageUrl: "abhangThumbnailUrl"
