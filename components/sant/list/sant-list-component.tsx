@@ -72,10 +72,9 @@ const SantListComponent = () => {
                     }))
                 });
             } catch (error) {
-                console.error("Error fetching data:", error);
+              
             }
         };
-        console.log("called -1")
         fetchData();
         const secondGrid = secondGridRef.current;
 

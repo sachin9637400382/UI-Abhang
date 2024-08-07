@@ -77,7 +77,7 @@ const KadambariDetailsComponent = ({ kadambariTypeId, kadambariId }: any) => {
                     }))
                 });
             } catch (error) {
-                console.error("Error fetching data:", error);
+               
             }
         };
 
@@ -244,11 +244,18 @@ const KadambariDetailsComponent = ({ kadambariTypeId, kadambariId }: any) => {
                                                                         {page.currentAratiIndex === -1 ?
                                                                             <div style={{ textAlign: 'center', marginTop: 20 }}>
                                                                                 <ImageWithLoader width={100} height={100} src="/assets/images/cloud.png" alt="no-record-found-image" title={"abhangvani.com"} />
-                                                                                <div>आरती सापडली  नाही , खालील आरती पहा !</div>
+                                                                                <div>कादंबरी सापडली नाही ,खालील कादंबरी पहा !</div>
                                                                             </div> :
-                                                                            < div id="abhang-content" style={{ padding: 20 }}
+                                                                        <>{
+                                                                            page?.kadambariDetails?.contents[page.currentAratiIndex].isFilrUrl === true ?
+                                                                            <>
+                                                                            <object style={{margin:10}} width="100%" height="794px" data={decodeURIComponent(page?.kadambariDetails?.contents[page.currentAratiIndex].content)} type="application/pdf"> </object>
+                                                                            </>
+                                                                            : <div id="abhang-content" style={{ padding: 20 }}
                                                                                 dangerouslySetInnerHTML={{ __html: page?.kadambariDetails?.contents[page.currentAratiIndex].content }}
                                                                             />
+                                                                        }
+                                                                        </>
                                                                         }
                                                                         <Typography
                                                                             variant="h1"

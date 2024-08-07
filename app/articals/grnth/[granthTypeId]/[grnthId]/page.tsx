@@ -13,7 +13,6 @@ const getGranthDetails = async (aratiContetnTypeId: string): Promise<IContentTyp
 
 var meta = HELPERS.defaultMeta;
 export async function generateMetadata({ params }: { params: { granthTypeId: string, grnthId: string } }): Promise<Metadata> {
-    console.log('granthTypeId, grnthId', params.granthTypeId, params.grnthId)
     await getGranthDetails(params.granthTypeId).then((granths) => {
         var index = granths?.contents?.findIndex((item) => item.urlId === params.grnthId) || 0;
         if (index !== -1) {

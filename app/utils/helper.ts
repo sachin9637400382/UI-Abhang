@@ -101,7 +101,7 @@ const HELPERS = {
     defaultMeta,
     ApiEntityType,
     getShareUrl,
-    convertToMarathiNumber,
+    convertToMarathiNumber
 
 };
 

@@ -42,7 +42,7 @@ const ApplicationSearchModel = ({ openSerchModel, setOpenSerchModel, serachQuery
                     setLoading(false)
                 });
             } catch (error) {
-                console.error("Error fetching data:", error);
+              
             }
         };
 

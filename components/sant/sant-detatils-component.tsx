@@ -196,7 +196,7 @@ const SantDetailsComponent = ({ santName }: any) => {
                     }))
                 });
             } catch (error) {
-                console.error("Error fetching data:", error);
+             
             }
         };
 

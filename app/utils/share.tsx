@@ -50,7 +50,6 @@ const TextShare = async (props: TextShareProps) => {
             props.setLoading(false);
         }
     } catch (error) {
-        console.error('Error fetching image:', error);
         props.setLoading(false);
     }
 }

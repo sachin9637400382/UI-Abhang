@@ -1,4 +1,3 @@
-// MyButton.js
 "use client";
 
 import { Button } from "@mui/material";
@@ -11,7 +10,6 @@ interface MyButtonProps {
 const MyButton = ({ onClick,btnText }: MyButtonProps) => {
 
   const onButtonClick =()=>{
-    console.log("testing");
     onClick()
   }
   return (

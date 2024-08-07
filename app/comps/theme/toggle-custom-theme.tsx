@@ -30,7 +30,6 @@ const ToggleCustomTheme =({
             "pageSize": 0,
             "parms": []
         });
-        console.log("Settings",Settings)
         return Settings;
     }
 

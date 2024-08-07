@@ -7,7 +7,8 @@ export interface IContent {
     shortDescription: string,
     content: string,
     click: string,
-    document: IDocument
+    document: IDocument,
+    isFilrUrl:boolean
 }
 
 export type IContentList = IContent[]

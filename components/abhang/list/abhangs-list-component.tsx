@@ -75,7 +75,7 @@ const SantAbhangListComponent = () => {
                     }))
                 });
             } catch (error) {
-                console.error("Error fetching data:", error);
+              
             }
         };
 

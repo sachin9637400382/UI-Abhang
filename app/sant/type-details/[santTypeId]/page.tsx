@@ -7,7 +7,6 @@ import SantTypeDetailsComponent from "@abhang/components/sant/sant-type-details"
 import { Metadata } from "next";
 
 const getSantWithType = async (searchQuery: string = ""): Promise<ISantTypes> => {
-  console.log("parmid",`${API_ENDPOINTS.GET_SANT_TYPES_BY_ID}${searchQuery}`)
   const { Data } = await apiCall<ISantTypes>(`${API_ENDPOINTS.GET_SANT_TYPES_BY_ID}${searchQuery}`, 'GET');
   return Data
 }
@@ -15,7 +14,6 @@ const getSantWithType = async (searchQuery: string = ""): Promise<ISantTypes> =>
 var meta = HELPERS.defaultMeta;
 export async function generateMetadata({ params }: { params: { santTypeId: string } }): Promise<Metadata> {
   const Data = await getSantWithType(params?.santTypeId).then((santType) => {
-    console.log("santType",santType)
     if (santType !== null || santType !== undefined) {
       const santNames = santType?.sants?.map(sant => sant.name).join(',');
       meta.title = `${santType?.name} - माहिती`,

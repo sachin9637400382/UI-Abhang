@@ -16,7 +16,6 @@ const getAratiDetails = async (aratiContetnTypeId: string): Promise<IContentType
 var meta = HELPERS.defaultMeta;
 export async function generateMetadata({ params }: { params: { aratiTypeId: string, aratiId: string } }): Promise<Metadata> {
     const Data = await getAratiDetails(params?.aratiTypeId).then((aratis) => {
-        console.log("DATA", aratis)
         var index = aratis?.contents?.findIndex((item) => item?.urlId === params?.aratiId) || 0;
         if (index !== -1) {
             const contentNames = aratis?.contents?.map(sant => sant.name).join(',');

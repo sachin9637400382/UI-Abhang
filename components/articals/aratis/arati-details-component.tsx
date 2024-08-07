@@ -77,7 +77,7 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                     }))
                 });
             } catch (error) {
-                console.error("Error fetching data:", error);
+                
             }
         };
 
@@ -231,9 +231,18 @@ const AratiDetailsComponent = ({ aratiTypeId, aratiId }: any) => {
                                                                                 <ImageWithLoader width={100} height={100} src="/assets/images/cloud.png" alt="no-record-found-image" title={"abhangvani.com"} />
                                                                                 <div>आरती सापडली  नाही , खालील आरती पहा !</div>
                                                                             </div> :
-                                                                            < div id="abhang-content" style={{ padding: 20 }}
-                                                                                dangerouslySetInnerHTML={{ __html: page?.aratiDetails?.contents[page.currentAratiIndex].content }}
-                                                                            />
+                                                                               <>{
+                                                                                page?.aratiDetails?.contents[page.currentAratiIndex].isFilrUrl === true ?
+                                                                                    <>
+                                                                                        <object style={{ margin: 10 }} width="100%" height="794px" data={decodeURIComponent(page?.aratiDetails?.contents[page.currentAratiIndex].content)} type="application/pdf"> </object>
+                                                                                    </>
+                                                                                    :  < div id="abhang-content" style={{ padding: 20 }}
+                                                                                    dangerouslySetInnerHTML={{ __html: page?.aratiDetails?.contents[page.currentAratiIndex].content }}
+                                                                                />
+                                                                            }
+                                                                            </>
+    
+                                                                           
                                                                         }
                                                                         <Typography
                                                                             variant="h1"
